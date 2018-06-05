@@ -87,8 +87,16 @@
 
   const greetHello = partial(greeter, "Hello", ", ");
   console.log(greetHello("!", "Bambino"));
+}
 
+{
+  const animals = ["lion", "cat", "elephant"];
+  // let letterCounts = animals.map(animal => animal.length);
+  // console.log(letterCounts);
 
-
+  //the same as:
+  const getLength = animal => animal.length;
+  let letterCounts = animals.map(getLength);
+  console.log(letterCounts);
 
 }
