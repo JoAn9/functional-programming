@@ -98,5 +98,21 @@
   const getLength = animal => animal.length;
   let letterCounts = animals.map(getLength);
   console.log(letterCounts);
+}
 
+{
+  const animals = ["lion", "cat", "elephant"];
+  let letterCount = animals.reduce((sum, item) => sum + item.length, 0);
+  console.log(letterCount);
+
+  const nextAnimals = ["lion", "cat", "elephant"];
+  const addLength = (sum, item) => sum + item.length;
+  let letterCountNext = nextAnimals.reduce(addLength, 0)
+  console.log(letterCountNext);
+}
+
+{
+  const animals = ["dog", "cat", "elephant"];
+  const exactThreeLetters = animals.filter(item => item.length === 3);
+  console.log(exactThreeLetters);
 }
