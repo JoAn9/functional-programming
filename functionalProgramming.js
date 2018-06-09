@@ -116,3 +116,29 @@
   const exactThreeLetters = animals.filter(item => item.length === 3);
   console.log(exactThreeLetters);
 }
+
+{
+  const animals = ["cat", "lion", "dog"];
+  const exactlyThree = item => item.length === 3;
+  const capitalize = item => item.charAt(0).toUpperCase() + item.slice(1);
+  const mergeWords = (items, item) => items + item;
+  const getAnimals = items => {
+    let threeLetters = items.filter(exactlyThree);
+    let capitalized = threeLetters.map(capitalize);
+    let merged = capitalized.reduce(mergeWords);
+    return merged;
+  }
+  console.log(getAnimals(animals));
+}
+
+
+{
+  const animals = ["cat", "fish", "dog"];
+  const exactlyThree = item => item.length === 3;
+  const capitalize = item => item.charAt(0).toUpperCase() + item.slice(1);
+  const mergeWords = (items, item) => items + item;
+  const threeLettersAnimals = animals.filter(exactlyThree)
+                                     .map(capitalize)
+                                     .reduce(mergeWords);
+  console.log(threeLettersAnimals);
+}
